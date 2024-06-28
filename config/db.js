@@ -5,9 +5,10 @@ import 'dotenv/config'
 const mongUri = process.env.Mongo_url
 
 
-const dbConnection = () => {
+export const dbConnection = () => {
     mongoose.connect(mongUri).then(()=>{
         console.log('Database is connected')
     })
     
 }
+

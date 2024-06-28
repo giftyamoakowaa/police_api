@@ -1,17 +1,19 @@
-// import { Router } from "express";
+import { Router } from "express";
 
-// const statementRouter = Router();
+import { addStatement, updateStatementId,getStatement,getStatementId} from "../controllers/statement_controller.js";
 
-// statementRouter.get('./', (req, res) => { res.json('All data') })
-// statementRouter.post('/statement', (req, res) => {
-//     res.json('all information');
-// });
+
+
+
+const statementRouter = Router();
+
 
 
 // export default statementRouter
 
-import {Router} from 'express'
-import { addStatement } from "../controllers/statement_controller.js";
+statementRouter.post('/statement',addStatement);
+statementRouter.get('/statement',getStatement);
+statementRouter.get('/statement/:id', getStatementId);
+statementRouter.patch('/statement/:id', updateStatementId);
 
-Router.post('/statement',addStatement)
-export default Router;
+export default statementRouter;
