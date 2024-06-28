@@ -37,30 +37,4 @@ export const getStatementId = async (req, res) => {
     }
 }
 
-export const updateStatementId = async (req,res) => {
-    try {
-
-        const status =req.body.caseStatus
-        console.log('request', req.params.caseStatus)
-        const updateDataId = await StatementModel.findById(req.params.id,{caseStatus:status})
-        res.json(updateDataId);
-
-    } catch (error) {
-        console.log(error)
-
-    }
-}
-
-export const deleteStatementId = async (req,res) => {
-    try {
-
-        const status =req.body.caseStatus;
-        console.log('request', req.params.caseStatus)
-        const updateDataId = await StatementModel.findById(req.params.id,{caseStatus:status})
-        res.json(updateDataId);
-
-    } catch (error) {
-        console.log(error)
-
-    }
-}
+export const updateStatementId = async (req)
